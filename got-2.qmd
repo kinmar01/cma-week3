@@ -12,7 +12,10 @@ format:
     toc-depth: 2
 number-sections: true
 bibliography: bibliography.bib
+output-file: index
+
 ---
+
 
 exercise, part of the course cma (mainly based on @LaubePatrick2014CMA)
 
