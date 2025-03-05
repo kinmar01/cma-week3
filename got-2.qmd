@@ -7,10 +7,10 @@ format:
     toc: true 
     toc-depth: 2
     embed-resources: true
-    other-formats: false
   pdf:           
     toc: true 
     toc-depth: 2
+format-links: false
 number-sections: true
 bibliography: bibliography.bib
 output-file: index
