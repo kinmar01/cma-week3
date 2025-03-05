@@ -1,0 +1,77 @@
+---
+title: "Analysis of GOT Series"
+author: "kinmar01"
+editor: visual
+format: 
+  html:           
+    toc: true 
+    toc-depth: 2
+    embed-resources: true
+  pdf:           
+    toc: true 
+    toc-depth: 2
+number-sections: true
+bibliography: bibliography.bib
+---
+
+exercise, part of the course cma (mainly based on @LaubePatrick2014CMA)
+
+# Abstract {.unnumbered .unlisted}
+
+This Document gives a brief overview over some houses of the GOT series (@sec-overview) and an short Analysis (@sec-analysis) of the top 10 characters with the most screentime
+
+# Overview Houses of GOT Series {#sec-overview}
+
+See Coat of Arms of different Houses in @fig-coat-of-arms
+
+::: {#fig-coat-of-arms layout-ncol="4"}
+![House Baratheon](baratheon.png){#fig-house-baratheon}
+
+![House Arryn](arryn.png){#fig-house-arryn}
+
+![House Baylish](baylish.png){#fig-house-baylish}
+
+![House Bolton](bolton.png){#fig-house-bolton}
+
+Figure 2: A collection of different coats of arms from the book ‘A song of Ice and Fire’, created by dezzzart published on [deviantart.com](https://www.deviantart.com/dezzzart)
+:::
+
+# Analysis {#sec-analysis}
+
+See @tbl-top-characters for top 10 characters with the most screen time
+
+## Screen time per Character
+
+```{r}
+
+pacman::p_load("readr","ggplot2","dplyr","ggrepel","knitr")
+
+screentimes <- read_delim("GOT_screentimes_1.csv")
+
+screentimes |> str()
+screentimes |> summary()
+
+```
+
+```{r}
+screentimes_high <- screentimes |> top_n(10, screentime)
+
+screentimes |> 
+  ggplot(aes(screentime, episodes)) +
+  geom_point() +
+  geom_text_repel(data = screentimes_high,aes(label = name),min.segment.length = 0)
+```
+
+```{r}
+#| label: tbl-top-characters
+#| tbl-cap: "Top 10 Characters with the most Screentime"
+
+screentimes_high |> 
+  select(name,screentime,episodes) |> 
+  kable()
+```
+
+# References
+
+::: {#refs}
+:::
