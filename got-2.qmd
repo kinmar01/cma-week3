@@ -37,7 +37,7 @@ See Coat of Arms of different Houses in @fig-coat-of-arms
 
 ![House Bolton](bolton.png){#fig-house-bolton}
 
-Figure 2: A collection of different coats of arms from the book ‘A song of Ice and Fire’, created by dezzzart published on [deviantart.com](https://www.deviantart.com/dezzzart)
+A collection of different coats of arms from the book ‘A song of Ice and Fire’, created by dezzzart published on [deviantart.com](https://www.deviantart.com/dezzzart)
 :::
 
 # Analysis {#sec-analysis}
